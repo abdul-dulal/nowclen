@@ -320,6 +320,10 @@ h1 .blue {
     grid-template-columns: repeat(3, 1fr);
   }
 
+  .hide-mobile {
+    display: none !important;
+  }
+
   .feature-item {
     padding: 20px 16px;
     display: flex;
