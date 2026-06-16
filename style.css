@@ -64,6 +64,29 @@ a {
   border-color: var(--blue);
 }
 
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 13px 26px;
+  border-radius: 8px;
+  cursor: pointer;
+  border: 2px solid #d0d8f0;
+  background: #fff;
+  color: var(--text);
+  white-space: nowrap;
+  transition:
+    border-color 0.2s,
+    color 0.2s;
+}
+.btn-outline:hover {
+  border-color: var(--blue);
+  color: var(--blue);
+}
+
 .br-mobile {
   display: none;
 }
@@ -269,6 +292,13 @@ h1 .blue {
   margin-top: 16px;
 }
 
+/* hide the outline button on desktop — only shown on mobile */
+@media (min-width: 768px) {
+  .btn-outline {
+    display: none;
+  }
+}
+
 .btn-primary {
   margin-top: 35px;
   width: 180px;
@@ -305,8 +335,8 @@ h1 .blue {
 }
 
 .hero-image-circle img {
-  width: 160px;
-  height: 200px;
+  width: 100%;
+  height: 600px;
   object-fit: cover;
   border-radius: 26% 0 63% 55% / 45% 0 1% 70%;
   display: block;
@@ -314,97 +344,61 @@ h1 .blue {
 
 /* Hero — Mobile */
 @media (max-width: 767px) {
-  .hero {
-    padding: 0;
-  }
-  .hero__inner {
-    flex-direction: column;
-    gap: 0;
-    min-height: auto;
-    position: relative;
-    padding-top: 32px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto auto;
-    padding-top: 0;
-  }
-  h1 {
-    font-size: 35px;
-  }
-  .hero-sub {
-    font-size: 15px;
-    margin-top: 10px;
-  }
-  .btn-primary {
-    margin-top: 0px;
-  }
-  .hero__content {
-    max-width: 100%;
-    order: 2;
-    z-index: 2;
-    grid-column: 1;
-    grid-row: 1;
-    padding: 32px 20px 24px;
-    align-self: center;
-  }
-  .hero__image-wrap {
-    grid-column: 2;
-    grid-row: 1;
-    min-height: auto;
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-end;
+  .hero-section {
     overflow: hidden;
   }
-  .hero__circle {
-    width: 200px;
-    height: 200px;
-    right: -24px;
-    top: 16px;
-    position: relative;
+  .hero-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 12;
+    min-height: 260px;
   }
-  .sparkle--lg {
-    width: 24px;
-    height: 24px;
-    top: 24px;
-    right: 8px;
+  .hero-text {
+    width: auto;
+    padding-right: 8px;
   }
-  .sparkle--sm {
-    width: 14px;
-    height: 14px;
-    top: 54px;
-    right: 2px;
+  h1 {
+    font-size: 32px;
+    line-height: 1.05;
   }
-  .hero__title {
-    font-size: 36px;
-    letter-spacing: -1px;
-    margin-bottom: 14px;
+  .hero-sub {
+    font-size: 13px;
+    margin-top: 10px;
   }
-  .hero__sub {
-    font-size: 14px;
-    margin-bottom: 22px;
-  }
-  .hero__btns {
+  .hero-buttons {
     flex-direction: column;
-    gap: 10px;
+    gap: 8px;
+    margin-top: 14px;
   }
-  .hero__btns .btn {
+  .btn-primary {
+    margin-top: 0;
     width: 100%;
-    justify-content: center;
-    font-size: 14px;
+    height: 44px;
+    font-size: 13px;
+    padding: 0 12px;
+    gap: 6px;
   }
-  .hero__btns .btn--outline {
-    display: inline-flex;
+  .btn-outline {
+    width: 100%;
+    height: 44px;
+    font-size: 13px;
+    padding: 0 12px;
+    gap: 6px;
+    color: #1b56ff;
   }
-}
-
-@media (max-width: 420px) {
-  .hero__circle {
-    width: 160px;
-    height: 160px;
+  .hero-image-circle {
+    align-self: stretch;
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
   }
-  .hero__title {
-    font-size: 30px;
+  .hero-image-circle img {
+    width: 100%;
+    height: 330px;
+    max-width: none;
+    object-fit: cover;
+    /* border-radius: 50% 0 0 0 / 30% 0 0 0; */
   }
 }
 
@@ -479,6 +473,9 @@ h1 .blue {
 
 /* Features — Mobile */
 @media (max-width: 640px) {
+  .features-section {
+    margin-top: -20px;
+  }
   .feature-card {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -594,6 +591,11 @@ h1 .blue {
   height: 28px;
 }
 
+.angle svg {
+  width: 20px;
+  height: 20px;
+  color: black;
+}
 .service-card__text h3 {
   font-size: 15px;
   font-weight: 700;
@@ -656,7 +658,7 @@ h1 .blue {
   .service-card {
     flex-direction: row;
     align-items: center;
-    padding: 18px 16px;
+    padding: 7px 16px;
     border-radius: 0;
     border: 1px solid #f0f0f0;
     gap: 14px;
