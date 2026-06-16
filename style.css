@@ -227,14 +227,22 @@ a {
 /* ══════════════════════════════════════════
    HERO
 ══════════════════════════════════════════ */
+.hero-section {
+  width: 100%;
+  overflow: hidden;
+}
+
 .hero-inner {
   display: flex;
   flex-direction: row;
-  gap: 16px;
+  align-items: center;
+  gap: 40px;
+  padding-left: max(24px, calc((100vw - 1200px) / 2 + 24px));
 }
 
 .hero-text {
   width: 500px;
+  flex-shrink: 0;
 }
 
 h1 {
@@ -291,10 +299,17 @@ h1 .blue {
   flex-shrink: 0;
 }
 
+.hero-image-circle {
+  flex: 1;
+  overflow: hidden;
+}
+
 .hero-image-circle img {
-  width: 761px;
-  height: 600px;
+  width: 160px;
+  height: 200px;
+  object-fit: cover;
   border-radius: 26% 0 63% 55% / 45% 0 1% 70%;
+  display: block;
 }
 
 /* Hero — Mobile */
@@ -312,6 +327,16 @@ h1 .blue {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto auto;
     padding-top: 0;
+  }
+  h1 {
+    font-size: 35px;
+  }
+  .hero-sub {
+    font-size: 15px;
+    margin-top: 10px;
+  }
+  .btn-primary {
+    margin-top: 0px;
   }
   .hero__content {
     max-width: 100%;
