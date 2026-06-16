@@ -591,6 +591,10 @@ h1 .blue {
   height: 28px;
 }
 
+.angle {
+  margin-top: auto;
+  align-self: flex-end;
+}
 .angle svg {
   width: 20px;
   height: 20px;
@@ -624,6 +628,11 @@ h1 .blue {
   }
   .service-card__text {
     flex: 1;
+  }
+  .angle {
+    align-self: center;
+    margin-top: 0;
+    margin-left: auto;
   }
   .service-card__arrow {
     align-self: center;
@@ -681,6 +690,11 @@ h1 .blue {
   }
   .service-card__text p {
     font-size: 13px;
+  }
+  .angle {
+    align-self: center;
+    margin-top: 0;
+    margin-left: auto;
   }
   .service-card__arrow {
     align-self: center;
