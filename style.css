@@ -6,6 +6,16 @@
   padding: 0;
 }
 
+.br-mobile {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .br-mobile {
+    display: block;
+  }
+}
+
 :root {
   --blue: #1a56e8;
   --blue-dark: #1440c0;
@@ -298,64 +308,9 @@ h1 .blue {
 }
 
 .content p {
-  font-size: 13px;
+  font-size: 14px;
   line-height: 1.5;
-  color: #6b7280;
-}
-
-/* Tablet */
-@media (max-width: 1024px) {
-  .feature-card {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .feature-item:nth-child(2)::after {
-    display: none;
-  }
-}
-
-/* Mobile */
-@media (max-width: 640px) {
-  .feature-card {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  .hide-mobile {
-    display: none !important;
-  }
-
-  .feature-item {
-    padding: 20px 16px;
-    display: flex;
-    justify-content: center;
-    position: relative;
-  }
-  .feature-item:not(:last-child)::after {
-    content: "";
-    position: absolute;
-    top: 25%;
-    right: 0px;
-    width: 1px;
-    height: 50%;
-    background: rgb(229, 231, 235);
-  }
-
-  .icon svg {
-    width: 26px;
-    height: 26px;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-  }
-
-  .feature-item::after {
-    display: none;
-  }
-  .feature-item {
-    flex-wrap: wrap;
-  }
-  .content {
-    text-align: center;
-  }
+  color: #636b84;
 }
 
 /* ── SERVICES ── */
@@ -464,84 +419,45 @@ h1 .blue {
     align-self: center;
     margin-top: 0;
   }
+  .content-mobile {
+    display: none !important;
+  }
 }
-
-/* ── CTA BANNER ── */
-.cta-banner {
-  background: var(--blue);
-  padding: 32px 0;
-}
-
-.cta-banner__inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 24px;
-  flex-wrap: wrap;
-}
-
-.cta-banner__left {
-  display: flex;
-  align-items: center;
-  gap: 18px;
-}
-
-.cta-banner__icon {
-  width: 48px;
-  height: 48px;
-  flex-shrink: 0;
-}
-
-.cta-banner__title {
-  font-size: 20px;
-  font-weight: 700;
-  color: #fff;
-  margin-bottom: 4px;
-}
-.cta-banner__sub {
-  font-size: 14px;
-  color: rgba(255, 255, 255, 0.8);
-}
-
-/* ── MOBILE BOTTOM BAR ── */
-.bottom-bar {
-  display: none;
-  justify-content: space-around;
-  align-items: center;
-  padding: 14px 8px 18px;
-  background: #fff;
-  border-top: 1px solid #eee;
-  position: sticky;
-  bottom: 0;
-  z-index: 99;
-  box-shadow: 0 -2px 12px rgba(0, 0, 0, 0.06);
-}
-
-.bottom-bar__item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 5px;
-  font-size: 10px;
-  font-weight: 600;
-  color: var(--text);
-  text-align: center;
-  max-width: 72px;
-  line-height: 1.3;
-}
-.bottom-bar__item svg {
-  width: 24px;
-  height: 24px;
+@media (max-width: 640px) {
+  .services__heading {
+    display: none;
+  }
+  .content-mobile {
+    text-align: center;
+  }
+  .content-mobile .sub-heading {
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #1b56ff;
+    margin-bottom: 0px;
+  }
+  .content-mobile h2 {
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 44px;
+    margin-bottom: 5px;
+  }
+  .content-mobile h2 span {
+    color: #1b56ff;
+  }
+  .content-mobile p {
+    font-size: 14px;
+    color: #636b84;
+    font-weight: 500;
+    margin-bottom: 12px;
+  }
 }
 
 /* ═══════════════════════════════
    RESPONSIVE — TABLET
 ═══════════════════════════════ */
 @media (max-width: 1023px) {
-  .trust__grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-  }
   .services__grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -552,9 +468,6 @@ h1 .blue {
   }
 }
 
-/* ═══════════════════════════════
-   RESPONSIVE — MOBILE (≤ 767px)
-═══════════════════════════════ */
 @media (max-width: 767px) {
   /* Header */
   .header__inner {
@@ -695,40 +608,6 @@ h1 .blue {
     display: inline-flex;
   }
 
-  /* Trust strip — show 3 in a card */
-  .trust {
-    margin-top: 0;
-    padding: 24px 20px;
-  }
-  .trust__grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0;
-    background: #fff;
-    border-radius: 16px;
-    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
-    padding: 20px 12px;
-  }
-  .trust__grid .trust__item:nth-child(4) {
-    display: none;
-  }
-  .trust__item {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 8px;
-    padding: 0 4px;
-  }
-  .trust__icon {
-    width: 36px;
-    height: 36px;
-  }
-  .trust__title {
-    font-size: 13px;
-  }
-  .trust__desc {
-    font-size: 11px;
-  }
-
   /* Services */
   .services {
     padding: 40px 0 48px;
@@ -743,7 +622,7 @@ h1 .blue {
     padding: 18px 16px;
     border-radius: 0;
     border: none;
-    border-bottom: 1px solid #f0f0f0;
+    border: 1px solid #f0f0f0;
     gap: 14px;
     background: transparent;
   }
@@ -769,41 +648,6 @@ h1 .blue {
     align-self: center;
     margin-top: 0;
   }
-
-  /* CTA Banner */
-  .cta-banner {
-    padding: 24px 0;
-  }
-  .cta-banner__inner {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 20px;
-    padding: 0 20px;
-  }
-  .cta-banner__left {
-    gap: 14px;
-  }
-  .cta-banner__icon {
-    width: 40px;
-    height: 40px;
-  }
-  .cta-banner__title {
-    font-size: 17px;
-  }
-  .cta-banner .btn--white {
-    width: 100%;
-    justify-content: center;
-  }
-
-  /* Show bottom bar */
-  .bottom-bar {
-    display: flex;
-  }
-
-  /* add padding so content doesn't hide behind bottom bar */
-  body {
-    padding-bottom: 80px;
-  }
 }
 
 @media (max-width: 420px) {
@@ -813,5 +657,64 @@ h1 .blue {
   }
   .hero__title {
     font-size: 30px;
+  }
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .feature-card {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .feature-item:nth-child(2)::after {
+    display: none;
+  }
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .feature-card {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .hide-mobile {
+    display: none !important;
+  }
+
+  .feature-item {
+    padding: 24px 12px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+  }
+  .feature-item:not(:last-child)::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 11%;
+    right: 0px;
+    width: 1px;
+    height: 78%;
+    background: rgb(229, 231, 235);
+  }
+
+  .icon svg {
+    width: 30px;
+    height: 30px;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .feature-item::after {
+    display: none;
+  }
+  .feature-item {
+    flex-wrap: wrap;
+  }
+  .content {
+    text-align: center;
+  }
+  .content p {
+    font-size: 12px;
   }
 }
