@@ -317,19 +317,40 @@ h1 .blue {
 /* Mobile */
 @media (max-width: 640px) {
   .feature-card {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(3, 1fr);
   }
 
   .feature-item {
-    padding: 22px;
+    padding: 20px 16px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+  }
+  .feature-item:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    top: 25%;
+    right: 0px;
+    width: 1px;
+    height: 50%;
+    background: rgb(229, 231, 235);
+  }
+
+  .icon svg {
+    width: 26px;
+    height: 26px;
+    stroke-linecap: round;
+    stroke-linejoin: round;
   }
 
   .feature-item::after {
     display: none;
   }
-
-  .feature-item:not(:last-child) {
-    border-bottom: 1px solid #e5e7eb;
+  .feature-item {
+    flex-wrap: wrap;
+  }
+  .content {
+    text-align: center;
   }
 }
 
